@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine Zhe ❤️</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff4e8a, #ff9ecf);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-top: 20%;
+    font-size: 45px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 22px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.money {
+    position: absolute;
+    font-size: 28px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>Happy Valentine ❤️</h1>
+<p>Untuk Zhe 💕<br>
+Terima kasih udah hadir dan bikin hari-hariku lebih berarti 💖</p>
+
+<script>
+function createMoney() {
+    const money = document.createElement("div");
+    money.classList.add("money");
+    money.innerHTML = "💸";
+    money.style.left = Math.random() * 100 + "vw";
+    money.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(money);
+
+    setTimeout(() => {
+        money.remove();
+    }, 6000);
+}
+
+setInterval(createMoney, 500);
+</script>
+
+</body>
+</html>
